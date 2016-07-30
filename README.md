@@ -1,1 +1,4 @@
-# chef_zabbix3
+# zabbix3
+
+TODO: Enter the cookbook description here.
+
