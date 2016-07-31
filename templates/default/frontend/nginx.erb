@@ -1,0 +1,7 @@
+# Defaults for nginx initscript
+# sourced by /etc/init.d/nginx
+
+ulimit -n <%= @ulimit %>
+
+# Additional options that are passed to nginx
+DAEMON_ARGS="<%= @daemon_args %>"

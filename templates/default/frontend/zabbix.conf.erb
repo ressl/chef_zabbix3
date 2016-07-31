@@ -1,0 +1,54 @@
+server {
+  listen 80 default_server;
+
+  server_name <%= @server_name %>;
+
+  root /usr/share/zabbix;
+  index index.php index.html index.htm;
+
+  access_log   /var/log/zabbix/frontend.access.log combined buffer=32k flush=5m;
+  error_log    /var/log/zabbix/frontend.error.log;
+
+  location /conf {
+    deny all;
+    return 404;
+  }
+
+  location /app {
+    deny all;
+    return 404;
+  }
+
+  location /include {
+    deny all;
+    return 404;
+  }
+
+  location /local {
+    deny all;
+    return 404;
+  }
+
+  include global/php.conf;
+
+}
+
+# server {
+#   listen 443 ssl http2 default_server;
+#
+#  server_name zabbix.safematix.com;
+#
+#  root /usr/share/zabbix;
+#  index index.php index.html index.htm;
+#
+#  access_log   /var/log/zabbix/frontend_ssl.access.log combined buffer=32k flush=5m;
+#  error_log    /var/log/zabbix/frontend_ssl.error.log;
+#
+#  #ssl_certificate /etc/nginx/ssl/safematix/www.safematix.com.crt;
+#  #ssl_certificate_key /etc/nginx/ssl/safematix/www.safematix.com.key;
+#
+#  #ssl_dhparam /etc/nginx/ssl/safematix/www_safematix_com_dhparam_8192.pem;
+#
+#  #include global/ssl.conf;
+#  include global/php.conf;
+# }

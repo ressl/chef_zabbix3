@@ -1,0 +1,4 @@
+location ~ \.php$ {
+  include global/fastcgi-php.conf;
+  fastcgi_pass unix:/var/run/php5-fpm.sock;
+}
