@@ -18,6 +18,13 @@ directory '/etc/nginx/global' do
   action :create
 end
 
+directory '/var/log/zabbix' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
 file '/etc/nginx/conf.d/default.conf' do
   action :delete
 end
@@ -94,6 +101,13 @@ template '/etc/php5/fpm/pool.d/www.conf' do
     always_populate_raw_post_data: node['zabbix3']['frontend']['php']['php_admin_value']['always_populate_raw_post_data'],
     timezone: node['zabbix3']['frontend']['php']['php_admin_value']['date_timezone']
   )
+end
+
+directory '/etc/zabbix/web' do
+  owner 'www-data'
+  group 'www-data'
+  mode '0700'
+  action :create
 end
 
 template '/etc/zabbix/web/zabbix.conf.php' do

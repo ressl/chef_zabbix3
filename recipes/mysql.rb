@@ -37,6 +37,22 @@ bash 'mysql' do
   not_if { File.exist?(db_file) }
 end
 
+template '/etc/mysql/my.cnf' do
+  source 'mysql/my.cnf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  variables(
+    ip: node['ipaddress']
+  )
+end
+
+service 'mysql' do
+  supports reload: 'true', restart: 'true', start: 'true', stop: 'true'
+  action [:enable, :start]
+  subscribes :restart, 'template[/etc/mysql/my.cnf]', :delayed
+end
+
 # mysql2_chef_gem 'default' do
 #   action :install
 # end

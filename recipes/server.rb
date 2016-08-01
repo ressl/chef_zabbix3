@@ -11,9 +11,11 @@ user = node['zabbix3']['server']['db']['user']
 password = node['zabbix3']['server']['db']['password']
 db_file = "/var/lib/mysql/#{node['zabbix3']['server']['db']['name']}/maintenances.frm"
 
-package 'zabbix-server-mysql' do
-  action :install
-  options '--no-install-recommends'
+%w(mysql-client zabbix-server-mysql).each do |pkg|
+  package pkg do
+    action :install
+    options '--no-install-recommends'
+  end
 end
 
 template '/etc/zabbix/zabbix_server.conf' do
@@ -35,7 +37,16 @@ template '/etc/zabbix/zabbix_server.conf' do
     log_file_size: node['zabbix3']['server']['log']['file_size'],
     slowqueries: node['zabbix3']['server']['log']['slowqueries'],
     pidfile: node['zabbix3']['server']['pidfile'],
-    timeout: node['zabbix3']['server']['timeout']
+    timeout: node['zabbix3']['server']['timeout'],
+    start: node['zabbix3']['server']['poller']['start'],
+    ipmi: node['zabbix3']['server']['poller']['ipmi'],
+    unreachable: node['zabbix3']['server']['poller']['unreachable'],
+    trappers: node['zabbix3']['server']['poller']['trappers'],
+    pingers: node['zabbix3']['server']['poller']['pingers'],
+    discoverers: node['zabbix3']['server']['poller']['discoverers'],
+    http: node['zabbix3']['server']['poller']['http'],
+    timers: node['zabbix3']['server']['poller']['timers'],
+    escalators: node['zabbix3']['server']['poller']['escalators']
   )
 end
 

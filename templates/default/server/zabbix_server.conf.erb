@@ -145,6 +145,8 @@ DBPort=<%= @port %>
 # Default:
 # StartPollers=5
 
+StartPollers= <%= @start %>
+
 ### Option: StartIPMIPollers
 #  Number of pre-forked instances of IPMI pollers.
 #
@@ -152,6 +154,8 @@ DBPort=<%= @port %>
 # Range: 0-1000
 # Default:
 # StartIPMIPollers=0
+
+StartIPMIPollers=<%= @ipmi %>
 
 ### Option: StartPollersUnreachable
 #  Number of pre-forked instances of pollers for unreachable hosts (including IPMI and Java).
@@ -162,6 +166,8 @@ DBPort=<%= @port %>
 # Range: 0-1000
 # Default:
 # StartPollersUnreachable=1
+
+StartPollersUnreachable=<%= @unreachable %>
 
 ### Option: StartTrappers
 #  Number of pre-forked instances of trappers.
@@ -174,6 +180,8 @@ DBPort=<%= @port %>
 # Default:
 # StartTrappers=5
 
+StartTrappers=<%= @trappers %>
+
 ### Option: StartPingers
 #  Number of pre-forked instances of ICMP pingers.
 #
@@ -181,6 +189,8 @@ DBPort=<%= @port %>
 # Range: 0-1000
 # Default:
 # StartPingers=1
+
+StartPingers=<%= @pingers %>
 
 ### Option: StartDiscoverers
 #  Number of pre-forked instances of discoverers.
@@ -190,6 +200,8 @@ DBPort=<%= @port %>
 # Default:
 # StartDiscoverers=1
 
+StartDiscoverers=<%= @discoverers %>
+
 ### Option: StartHTTPPollers
 #  Number of pre-forked instances of HTTP pollers.
 #
@@ -197,6 +209,8 @@ DBPort=<%= @port %>
 # Range: 0-1000
 # Default:
 # StartHTTPPollers=1
+
+StartHTTPPollers=<%= @http %>
 
 ### Option: StartTimers
 #  Number of pre-forked instances of timers.
@@ -208,6 +222,8 @@ DBPort=<%= @port %>
 # Default:
 # StartTimers=1
 
+StartTimers=<%= @timers %>
+
 ### Option: StartEscalators
 #  Number of pre-forked instances of escalators.
 #
@@ -215,6 +231,8 @@ DBPort=<%= @port %>
 # Range: 0-100
 # Default:
 # StartEscalators=1
+
+StartEscalators=<%= @escalators %>
 
 ### Option: JavaGateway
 #  IP address (or hostname) of Zabbix Java gateway.

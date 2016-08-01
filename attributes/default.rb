@@ -15,6 +15,15 @@ default['zabbix3']['server']['timeout'] = '4'
 default['zabbix3']['server']['server'] = 'localhost'
 default['zabbix3']['server']['port'] = '10051'
 default['zabbix3']['server']['name'] = nil
+default['zabbix3']['server']['poller']['start'] = '20'
+default['zabbix3']['server']['poller']['ipmi'] = '0'
+default['zabbix3']['server']['poller']['unreachable'] = '20'
+default['zabbix3']['server']['poller']['trappers'] = '20'
+default['zabbix3']['server']['poller']['pingers'] = '20'
+default['zabbix3']['server']['poller']['discoverers'] = '20'
+default['zabbix3']['server']['poller']['http'] = '20'
+default['zabbix3']['server']['poller']['timers'] = '20'
+default['zabbix3']['server']['poller']['escalators'] = '20'
 
 default['zabbix3']['agent']['hostname'] = node['hostname']
 default['zabbix3']['agent']['include'] = '/etc/zabbix/zabbix_agentd.d/'
