@@ -9,7 +9,8 @@ when 'ubuntu'
   apt_repository 'zabbix' do
     uri 'http://repo.zabbix.com/zabbix/3.0/ubuntu'
     components ['main']
-    key 'http://repo.zabbix.com/zabbix-official-repo.key'
+    key '0x082ab56ba14fe591'
+    keyserver 'keyserver.ubuntu.com'
   end
 when 'debian'
   apt_repository 'zabbix' do

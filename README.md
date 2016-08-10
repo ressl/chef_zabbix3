@@ -1,4 +1,4 @@
 # zabbix3
 
-TODO: Enter the cookbook description here.
+Under construction! Not ready yet
 

@@ -6,7 +6,7 @@ description 'Installs/Configures zabbix3'
 long_description 'Installs/Configures zabbix3'
 source_url       'https://github.com/safematix/chef_zabbix3'  if respond_to?(:source_url)
 issues_url       'https://github.com/safematix/chef_zabbix3/issues' if respond_to?(:issues_url)
-version '0.1.5'
+version '0.1.6'
 
 %w(debian ubuntu redhat centos fedora).each do |os|
   supports os
