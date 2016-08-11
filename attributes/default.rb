@@ -32,6 +32,12 @@ default['zabbix3']['agent']['log']['file_size'] = '0'
 default['zabbix3']['agent']['pidfile'] = '/var/run/zabbix/zabbix_agentd.pid'
 default['zabbix3']['agent']['server'] = '127.0.0.1'
 default['zabbix3']['agent']['server_active'] = '127.0.0.1'
+default['zabbix3']['agent']['tls']['psk']['connect'] = 'psk'
+default['zabbix3']['agent']['tls']['psk']['accept'] = 'psk'
+default['zabbix3']['agent']['tls']['psk']['keyfile'] = '/etc/zabbix/zabbix_agentd.psk'
+default['zabbix3']['agent']['tls']['psk']['identity'] = 'CHANGE_ME'
+# openssl rand -hex 32
+default['zabbix3']['agent']['tls']['psk']['psk_key'] = '523e7281dd200c6dcf9761711075e53c7e6a09cd2b2ece712c2c18e131f92382'
 
 default['zabbix3']['frontend']['nginx']['ulimit'] = '65536'
 default['zabbix3']['frontend']['nginx']['daemon_args'] = nil

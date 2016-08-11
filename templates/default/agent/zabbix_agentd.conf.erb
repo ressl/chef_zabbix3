@@ -325,6 +325,8 @@ Include=<%= @include %>
 # Default:
 # TLSConnect=unencrypted
 
+TLSConnect=<%= @psk_connect %>
+
 ### Option: TLSAccept
 #  What incoming connections to accept.
 #  Multiple values can be specified, separated by comma:
@@ -335,6 +337,8 @@ Include=<%= @include %>
 # Mandatory: yes, if TLS certificate or PSK parameters are defined (even for 'unencrypted' connection)
 # Default:
 # TLSAccept=unencrypted
+
+TLSAccept=<%= @pks_accept %>
 
 ### Option: TLSCAFile
 #  Full pathname of a file containing the top-level CA(s) certificates for
@@ -386,9 +390,13 @@ Include=<%= @include %>
 # Default:
 # TLSPSKIdentity=
 
+TLSPSKIdentity=<%= @psk_identity %>
+
 ### Option: TLSPSKFile
 #  Full pathname of a file containing the pre-shared key.
 #
 # Mandatory: no
 # Default:
 # TLSPSKFile=
+
+TLSPSKFile=<%= @psk_file %>

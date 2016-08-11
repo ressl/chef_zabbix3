@@ -4,7 +4,7 @@ maintainer_email 'r.ressl@safematix.com'
 license 'GPL v3'
 description 'Installs/Configures zabbix3'
 long_description 'Installs/Configures zabbix3'
-source_url       'https://github.com/safematix/chef_zabbix3'  if respond_to?(:source_url)
+source_url       'https://github.com/safematix/chef_zabbix3' if respond_to?(:source_url)
 issues_url       'https://github.com/safematix/chef_zabbix3/issues' if respond_to?(:issues_url)
 version '0.1.6'
 
